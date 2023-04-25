@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"   rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #123;
+        }
+        h1{
+            color: #faa;
+            margin: 150px 50px;
+            text-transform: capitalize;
+            width: fit-content;
+            animation: chart .6s linear infinite;
+            padding-right: 8px;
+            text-align: center;
+            font-size: 130px;
+        }
+        @keyframes chart {
+            to{
+                border-right: 1px solid #faa;
+            }
+        }
+        h2{
+            font-family: 'Noto Nastaliq Urdu', serif;
+            color: #fcd;
+            text-align: center;
+            font-size: 56px;
+        }
+    </style>
+</head>
+<body>
+    <h2>' به نام خالق دوست '</h2>
+    <h1></h1>
+</body>
+<script>
+    let _name = prompt('whats your name')
+    let i = 0
+    let q = setInterval(saman, 600)
+    let z;
+    function saman(){
+        if(i<_name.length){
+            document.getElementsByTagName('h1')[0].innerHTML += _name[i]
+            i++
+        }
+        else{
+            clearInterval(q)
+
+            z = setInterval(clear , 700)
+        }
+    }
+
+    function clear(){
+        if(i>=0){
+            document.getElementsByTagName('h1')[0].innerHTML = _name.substring(0,(i-1))
+            i--
+        }
+        else{
+            clearInterval(z)
+        }
+    }
+</script>
+</html>
